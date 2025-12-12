@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Pokemon } from '../models/pokemon.model';
+import { Pokemon } from '@models/pokemon.model';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-  private apiUrl = 'https://localhost:7184/api/Pokemons';
+  private apiUrl = `${environment.apiUrl}/Pokemons`;
   constructor(private http: HttpClient) {}
 
   getPokemons(): Observable<Pokemon[]> {
