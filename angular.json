@@ -53,8 +53,14 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
+          "development": {
+            "buildOptimizer": false,
+            "optimization": false,
+            "fileReplacements": []
+          }
         },
+        
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
