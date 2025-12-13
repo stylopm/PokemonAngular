@@ -21,12 +21,12 @@
     "paths": {
       "@env/*": ["environments/*"],
       "@models/*": ["app/pokemon/models/*"],
-      "@services/*": ["app/services/*"],
-      "@components/*": ["app/components/*"],
-      "@pages/*": ["app/pages/*"],
-      "@shared/*": ["app/shared/*"],
-      "@core/*": ["app/core/*"],
-      "@utils/*": ["app/utils/*"],
+      "@services/*": ["app/pokemon/services/*"],
+      "@components/*": ["app/pokemon/components/*"],
+      "@pages/*": ["app/pokemon/pages/*"],
+      "@shared/*": ["app/pokemon/shared/*"],
+      "@core/*": ["app/pokemon/core/*"],
+      "@utils/*": ["app/pokemon/utils/*"],
     }
   },
   "angularCompilerOptions": {
