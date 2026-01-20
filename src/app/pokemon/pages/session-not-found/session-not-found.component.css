@@ -1,0 +1,22 @@
+.not-found-container {
+  text-align: center;
+  margin-top: 80px;
+}
+
+h1 {
+  font-size: 42px;
+  color: #ff4d4f;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+}
+
+a {
+  margin-top: 20px;
+  display: inline-block;
+  color: #1890ff;
+  text-decoration: none;
+  font-weight: bold;
+}
