@@ -1,29 +1,78 @@
-<div class="table-container">
-  <table class="pokemon-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Level</th>
-        <th>HP</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
+<section class="pokemon-table">
+  <header class="pokemon-table__header">
+    <h3 class="pokemon-table__title">Pokémon List</h3>
+    <p class="pokemon-table__subtitle">Manage your pokémons: view and edit.</p>
+  </header>
 
-    <tbody>
-      <tr *ngFor="let pokemon of pokemons">
-        <td>{{ pokemon.id }}</td>
-        <td>{{ pokemon.name }}</td>
-        <td>{{ pokemon.type }}</td>
-        <td>{{ pokemon.level }}</td>
-        <td>{{ pokemon.hp }}</td>
-        <td>
-          <a class="edit-link" [routerLink]="['/pokemon/edit', pokemon.id]">
-            Edit
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <div class="pokemon-table__content">
+    <!-- Empty state -->
+    <div class="pokemon-table__empty" *ngIf="!pokemons?.length">
+      <p class="pokemon-table__empty-title">No pokémons found</p>
+      <p class="pokemon-table__empty-text">Try adding your first Pokémon.</p>
+    </div>
+
+    <!-- Table -->
+    <div class="pokemon-table__table-wrap" *ngIf="pokemons?.length">
+      <table class="pokemon-table__table" aria-label="Pokemon table">
+        <caption class="pokemon-table__caption">
+          A list of pokémons with their main stats and actions.
+        </caption>
+
+        <thead class="pokemon-table__thead">
+          <tr class="pokemon-table__row pokemon-table__row--head">
+            <th class="pokemon-table__th pokemon-table__th--id" scope="col">ID</th>
+            <th class="pokemon-table__th pokemon-table__th--name" scope="col">Name</th>
+            <th class="pokemon-table__th pokemon-table__th--type" scope="col">Type</th>
+            <th class="pokemon-table__th pokemon-table__th--level" scope="col">Level</th>
+            <th class="pokemon-table__th pokemon-table__th--hp" scope="col">HP</th>
+            <th class="pokemon-table__th pokemon-table__th--actions" scope="col">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody class="pokemon-table__tbody">
+          <tr class="pokemon-table__row" *ngFor="let pokemon of pokemons; trackBy: trackByPokemonId">
+            <td class="pokemon-table__td pokemon-table__td--id">{{ pokemon.id }}</td>
+
+            <td class="pokemon-table__td pokemon-table__td--name">
+              <span class="pokemon-table__name">{{ pokemon.name }}</span>
+            </td>
+
+            <td class="pokemon-table__td pokemon-table__td--type">
+              <!-- Badge de tipo (sin lógica extra, solo UI). Si quieres colores por tipo, lo hacemos luego -->
+              <span class="pokemon-table__badge">
+                {{ pokemon.type }}
+              </span>
+            </td>
+
+            <td class="pokemon-table__td pokemon-table__td--level">
+              {{ pokemon.level }}
+            </td>
+
+            <td class="pokemon-table__td pokemon-table__td--hp">
+              {{ pokemon.hp }}
+            </td>
+
+            <td class="pokemon-table__td pokemon-table__td--actions">
+              <div class="pokemon-table__actions">
+                <a
+                  class="pokemon-table__action pokemon-table__action--edit"
+                  [routerLink]="['/pokemon/edit', pokemon.id]"
+                  aria-label="Edit pokemon"
+                >
+                  Edit
+                </a>
+
+                <!-- opcional: placeholder para futuras acciones -->
+                <!--
+                <button class="pokemon-table__action pokemon-table__action--delete" type="button">
+                  Delete
+                </button>
+                -->
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

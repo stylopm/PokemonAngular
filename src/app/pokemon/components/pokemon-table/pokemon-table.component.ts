@@ -12,4 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class PokemonTableComponent {
   @Input() pokemons: Pokemon[] = [];
+
+  trackByPokemonId = (_: number, p: { id: number }) => p.id;
 }
+

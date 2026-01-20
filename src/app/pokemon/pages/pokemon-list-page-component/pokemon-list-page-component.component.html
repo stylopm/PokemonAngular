@@ -1,14 +1,7 @@
-<p>
-  <a routerLink="/pokemon/new">Add Pokemon</a>
-</p>
-
 <div class="loading" *ngIf="loading">
   loading...
   <img src="assets/images/loading.gif" alt="loading">
 </div>
-
 <div class="card" *ngIf="!loading">
-  <p>Pokemones</p>
-
   <app-pokemon-table [pokemons]="pokemons"></app-pokemon-table>
 </div>
