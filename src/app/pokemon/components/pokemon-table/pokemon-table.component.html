@@ -62,20 +62,18 @@
 
             <td class="pokemon-table__td pokemon-table__td--actions">
               <div class="pokemon-table__actions">
+                <!-- [routerLink]="['/pokemon/edit', pokemon.id]" -->
                 <a
                   class="pokemon-table__action pokemon-table__action--edit"
-                  [routerLink]="['/pokemon/edit', pokemon.id]"
+                  routerLink="/pokemon/edit"
                   aria-label="Edit pokemon"
                 >
                   Edit
                 </a>
 
-                <!-- opcional: placeholder para futuras acciones -->
-                <!--
                 <button class="pokemon-table__action pokemon-table__action--delete" type="button">
                   Delete
                 </button>
-                -->
               </div>
             </td>
           </tr>
