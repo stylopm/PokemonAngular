@@ -8,13 +8,13 @@ import {
 
 import { CommonModule } from '@angular/common';
 import { Pokemon } from '@models/pokemon.model';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-form',
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './pokemon-form.component.html',
-  styleUrl: './pokemon-form.component.css',
+  styleUrl: './pokemon-form.component.less',
 })
 export class PokemonFormComponent {
   @Input() pokemon?: Pokemon;
@@ -23,7 +23,6 @@ export class PokemonFormComponent {
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
-
 
   private createForm() {
     this.form = this.fb.group({

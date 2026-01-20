@@ -1,0 +1,143 @@
+@bg-main: #0b1220;
+@card: #1b2a41;
+@card-light: #243a5e;
+@text: #eaf2ff;
+@muted: #9fb3d9;
+
+@green: #22c55e;
+@green-dark: #16a34a;
+
+@danger: #ff6b6b;
+
+.pokemon-form {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  background: radial-gradient(circle at top, #1e3a8a, #020617);
+}
+
+.pokemon-form__card {
+  width: 880px;
+  background: linear-gradient(180deg, @card-light, @card);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.55);
+  color: @text;
+}
+
+.pokemon-form__header {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+.pokemon-form__title {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.pokemon-form__subtitle {
+  color: @muted;
+  margin-top: 6px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  background: rgba(255,255,255,.04);
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.field__label {
+  font-size: 13px;
+  color: @muted;
+  font-weight: 700;
+}
+
+.field__control {
+  margin-top: 6px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(0,0,0,.25);
+  color: @text;
+  font-size: 15px;
+
+  &:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96,165,250,.35);
+  }
+}
+
+.field__control--invalid {
+  border-color: @danger;
+  box-shadow: 0 0 0 2px fade(@danger,30%);
+}
+
+.field__hint {
+  font-size: 12px;
+  color: @muted;
+}
+
+.field__error {
+  color: @danger;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.pokemon-form__footer {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.btn--success {
+  background: linear-gradient(180deg, @green, @green-dark);
+  color: #052e16;
+  font-weight: 900;
+  padding: 12px 28px;
+  border-radius: 14px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(34,197,94,.45);
+  transition: all .2s ease;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(34,197,94,.6);
+  }
+
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+}
+
+.pokemon-form__status {
+  color: @muted;
+  font-size: 13px;
+}
+
+.pokemon-form__back-link {
+  color: #93c5fd;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,44 +1,70 @@
-<p>
-    <a routerLink="/">Regresar</a>
-</p>
-<div >
+<div class="pokemon-form">
+    <div class="pokemon-form__card">
+        <header class="pokemon-form__header">
+            <h2 class="pokemon-form__title">
+                {{ pokemon ? 'Edit Pokemon' : 'Create Pokemon' }}
+            </h2>
+            <p class="pokemon-form__subtitle">
+                Fill in the data. All fields are required.
+            </p>
+        </header>
 
-<form [formGroup]="form" (ngSubmit)="save()">
-  <div>
-    <label>Name</label>
-    <input type="text" formControlName="name">
-    <small *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
-      Name is required
-    </small>
-  </div>
+        <form class="pokemon-form__body" [formGroup]="form" (ngSubmit)="save()">
 
-  <div>
-    <label>Type</label>
-    <input type="text" formControlName="type">
-    <small *ngIf="form.get('type')?.invalid && form.get('type')?.touched">
-      Type is required
-    </small>
-  </div>
+            <div class="form-grid">
+                <!-- Name -->
+                <div class="field">
+                    <label class="field__label" for="name">Name</label>
+                    <input id="name" class="field__control" type="text" formControlName="name"
+                        placeholder="e.g. Pikachu" autocomplete="off"
+                        [class.field__control--invalid]="form.get('name')?.invalid && form.get('name')?.touched" />
+                    <small class="field__error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                        Name is required (min 2 characters).
+                    </small>
+                </div>
 
-  <div>
-    <label>Level</label>
-    <input type="number" formControlName="level">
-    <small *ngIf="form.get('level')?.invalid && form.get('level')?.touched">
-      Level must be between 1 and 100
-    </small>
-  </div>
+                <!-- Type -->
+                <div class="field">
+                    <label class="field__label" for="type">Type</label>
+                    <input id="type" class="field__control" type="text" formControlName="type"
+                        placeholder="e.g. Electric" autocomplete="off"
+                        [class.field__control--invalid]="form.get('type')?.invalid && form.get('type')?.touched" />
+                    <small class="field__error" *ngIf="form.get('type')?.invalid && form.get('type')?.touched">
+                        Type is required.
+                    </small>
+                </div>
 
-  <div>
-    <label>HP</label>
-    <input type="number" formControlName="hp">
-    <small *ngIf="form.get('hp')?.invalid && form.get('hp')?.touched">
-      HP must be between 1 and 999
-    </small>
-  </div>
+                <!-- Level -->
+                <div class="field">
+                    <label class="field__label" for="level">Level</label>
+                    <input id="level" class="field__control" type="number" formControlName="level" placeholder="1 - 100"
+                        [class.field__control--invalid]="form.get('level')?.invalid && form.get('level')?.touched" />
+                    <small class="field__hint">Allowed range: 1–100</small>
+                    <small class="field__error" *ngIf="form.get('level')?.invalid && form.get('level')?.touched">
+                        Level must be between 1 and 100.
+                    </small>
+                </div>
 
-  <button type="submit">
-    {{ pokemon ? 'Update' : 'Create' }} Pokemon
-  </button>
+                <!-- HP -->
+                <div class="field">
+                    <label class="field__label" for="hp">HP</label>
+                    <input id="hp" class="field__control" type="number" formControlName="hp" placeholder="1 - 999"
+                        [class.field__control--invalid]="form.get('hp')?.invalid && form.get('hp')?.touched" />
+                    <small class="field__hint">Allowed range: 1–999</small>
+                    <small class="field__error" *ngIf="form.get('hp')?.invalid && form.get('hp')?.touched">
+                        HP must be between 1 and 999.
+                    </small>
+                </div>
+            </div>
 
-</form>
+            <footer class="pokemon-form__footer">
+                <a routerLink="/" class="btn btn--success">
+                    Regresar
+                </a>
+                <button class="btn btn--success" type="submit" [disabled]="form.invalid">
+                    {{ pokemon ? 'Update' : 'Create' }} Pokemon
+                </button>
+            </footer>
+        </form>
+    </div>
 </div>
