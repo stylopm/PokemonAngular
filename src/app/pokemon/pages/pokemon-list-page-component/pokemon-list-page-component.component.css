@@ -13,3 +13,9 @@
 .table-striped tr:nth-child(even) {
   background-color: #e9ecef;
 }
+
+.table-container {
+  max-height: 600px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+}

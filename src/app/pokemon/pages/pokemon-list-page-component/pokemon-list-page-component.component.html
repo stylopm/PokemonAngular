@@ -7,24 +7,27 @@
 </div>
 <div class="card" *ngIf="!loading">
   <p>Pokemones</p>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Level</th>
-        <th>HP</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let pokemon of pokemons">
-        <td>{{ pokemon.id }}</td>
-        <td>{{ pokemon.name }}</td>
-        <td>{{ pokemon.type }}</td>
-        <td>{{ pokemon.level }}</td>
-        <td>{{ pokemon.hp }}</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="table-container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Level</th>
+          <th>HP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pokemon of pokemons">
+          <td>{{ pokemon.id }}</td>
+          <td>{{ pokemon.name }}</td>
+          <td>{{ pokemon.type }}</td>
+          <td>{{ pokemon.level }}</td>
+          <td>{{ pokemon.hp }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

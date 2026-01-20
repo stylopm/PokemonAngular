@@ -7,7 +7,7 @@ import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-list-page-component',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink ],
   templateUrl: './pokemon-list-page-component.component.html',
   styleUrl: './pokemon-list-page-component.component.css',
 })
