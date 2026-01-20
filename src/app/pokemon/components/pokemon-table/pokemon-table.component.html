@@ -1,8 +1,16 @@
 <section class="pokemon-table">
-  <header class="pokemon-table__header">
-    <h3 class="pokemon-table__title">Pokémon List</h3>
-    <p class="pokemon-table__subtitle">Manage your pokémons: view and edit.</p>
-  </header>
+<header class="pokemon-table__header">
+  <div class="pokemon-table__header-row">
+    <div>
+      <h3 class="pokemon-table__title">Pokémon List</h3>
+      <p class="pokemon-table__subtitle">Manage your pokémons: view and edit.</p>
+    </div>
+
+    <a class="pokemon-table__add" routerLink="/pokemon/new">
+      + Add Pokémon
+    </a>
+  </div>
+</header>
 
   <div class="pokemon-table__content">
     <!-- Empty state -->
