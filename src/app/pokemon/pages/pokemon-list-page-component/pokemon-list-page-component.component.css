@@ -1,0 +1,15 @@
+.table-striped {
+  background-color: #0281ff;
+}
+
+.table-striped th {
+  background-color: #e9ecef;
+}
+
+.table-striped td {
+  background-color: #f8f9fa;
+}
+
+.table-striped tr:nth-child(even) {
+  background-color: #e9ecef;
+}
