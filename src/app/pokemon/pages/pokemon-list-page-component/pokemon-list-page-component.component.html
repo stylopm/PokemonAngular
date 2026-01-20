@@ -1,35 +1,14 @@
 <p>
   <a routerLink="/pokemon/new">Add Pokemon</a>
 </p>
+
 <div class="loading" *ngIf="loading">
   loading...
   <img src="assets/images/loading.gif" alt="loading">
 </div>
+
 <div class="card" *ngIf="!loading">
   <p>Pokemones</p>
 
-  <div class="table-container">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Level</th>
-          <th>HP</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let pokemon of pokemons">
-          <td>{{ pokemon.id }}</td>
-          <td>{{ pokemon.name }}</td>
-          <td>{{ pokemon.type }}</td>
-          <td>{{ pokemon.level }}</td>
-          <td>{{ pokemon.hp }}</td>
-          <td><a routerLink="/pokemon/edit">Edit</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <app-pokemon-table [pokemons]="pokemons"></app-pokemon-table>
 </div>

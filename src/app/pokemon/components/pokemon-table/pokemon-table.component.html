@@ -1,1 +1,29 @@
-<p>pokemon-table works!</p>
+<div class="table-container">
+  <table class="pokemon-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Level</th>
+        <th>HP</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let pokemon of pokemons">
+        <td>{{ pokemon.id }}</td>
+        <td>{{ pokemon.name }}</td>
+        <td>{{ pokemon.type }}</td>
+        <td>{{ pokemon.level }}</td>
+        <td>{{ pokemon.hp }}</td>
+        <td>
+          <a class="edit-link" [routerLink]="['/pokemon/edit', pokemon.id]">
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
