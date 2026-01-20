@@ -1,1 +1,44 @@
-<p>pokemon-form works!</p>
+<p>
+    <a routerLink="/">Regresar</a>
+</p>
+<div >
+
+<form [formGroup]="form" (ngSubmit)="save()">
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name">
+    <small *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+      Name is required
+    </small>
+  </div>
+
+  <div>
+    <label>Type</label>
+    <input type="text" formControlName="type">
+    <small *ngIf="form.get('type')?.invalid && form.get('type')?.touched">
+      Type is required
+    </small>
+  </div>
+
+  <div>
+    <label>Level</label>
+    <input type="number" formControlName="level">
+    <small *ngIf="form.get('level')?.invalid && form.get('level')?.touched">
+      Level must be between 1 and 100
+    </small>
+  </div>
+
+  <div>
+    <label>HP</label>
+    <input type="number" formControlName="hp">
+    <small *ngIf="form.get('hp')?.invalid && form.get('hp')?.touched">
+      HP must be between 1 and 999
+    </small>
+  </div>
+
+  <button type="submit">
+    {{ pokemon ? 'Update' : 'Create' }} Pokemon
+  </button>
+
+</form>
+</div>
