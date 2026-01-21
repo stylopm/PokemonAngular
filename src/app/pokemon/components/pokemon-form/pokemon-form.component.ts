@@ -19,13 +19,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './pokemon-form.component.less',
 })
 export class PokemonFormComponent {
-  @Input() pokemon?: Pokemon;
+  @Input() pokemon: Pokemon | null = null;
   form!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private ps: PokemonService,
-    private router: Router
+    private router: Router,
   ) {
     this.createForm();
   }
@@ -52,11 +52,9 @@ export class PokemonFormComponent {
       return;
     }
     const pokemon: Pokemon = this.form.value;
-    this.ps.createPokemon(pokemon).subscribe(
-      (pokemonNew) => {
-        alert(`Pokemon new ${pokemonNew.id} ${pokemonNew.name}`   )
-        this.router.navigate(['/']);
-      }
-    );
+    this.ps.createPokemon(pokemon).subscribe((pokemonNew) => {
+      alert(`Pokemon new ${pokemonNew.id} ${pokemonNew.name}`);
+      this.router.navigate(['/']);
+    });
   }
 }

@@ -16,7 +16,7 @@
                 <div class="field">
                     <label class="field__label" for="name">Name</label>
                     <input id="name" class="field__control" type="text" formControlName="name"
-                        placeholder="e.g. Pikachu" autocomplete="off"
+                         autocomplete="off"
                         [class.field__control--invalid]="form.get('name')?.invalid && form.get('name')?.touched" />
                     <small class="field__error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
                         Name is required (min 2 characters).
@@ -27,7 +27,7 @@
                 <div class="field">
                     <label class="field__label" for="type">Type</label>
                     <input id="type" class="field__control" type="text" formControlName="type"
-                        placeholder="e.g. Electric" autocomplete="off"
+                         autocomplete="off"
                         [class.field__control--invalid]="form.get('type')?.invalid && form.get('type')?.touched" />
                     <small class="field__error" *ngIf="form.get('type')?.invalid && form.get('type')?.touched">
                         Type is required.
@@ -37,7 +37,7 @@
                 <!-- Level -->
                 <div class="field">
                     <label class="field__label" for="level">Level</label>
-                    <input id="level" class="field__control" type="number" formControlName="level" placeholder="1 - 100"
+                    <input id="level" class="field__control" type="number" formControlName="level"
                         [class.field__control--invalid]="form.get('level')?.invalid && form.get('level')?.touched" />
                     <small class="field__hint">Allowed range: 1–100</small>
                     <small class="field__error" *ngIf="form.get('level')?.invalid && form.get('level')?.touched">
@@ -48,7 +48,7 @@
                 <!-- HP -->
                 <div class="field">
                     <label class="field__label" for="hp">HP</label>
-                    <input id="hp" class="field__control" type="number" formControlName="hp" placeholder="1 - 999"
+                    <input id="hp" class="field__control" type="number" formControlName="hp"
                         [class.field__control--invalid]="form.get('hp')?.invalid && form.get('hp')?.touched" />
                     <small class="field__hint">Allowed range: 1–999</small>
                     <small class="field__error" *ngIf="form.get('hp')?.invalid && form.get('hp')?.touched">
