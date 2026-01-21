@@ -7,7 +7,7 @@ import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-list-page-component',
-  imports: [CommonModule,  PokemonTableComponent],
+  imports: [CommonModule, PokemonTableComponent],
   templateUrl: './pokemon-list-page-component.component.html',
   styleUrl: './pokemon-list-page-component.component.css',
 })
@@ -19,6 +19,9 @@ export class PokemonListPageComponentComponent {
     this.loadPokemons();
   }
 
+  onPokemonDeleted(id: number) {
+    this.loadPokemons();
+  }
   loadPokemons(): void {
     this.loading = true;
     this.pokemonService

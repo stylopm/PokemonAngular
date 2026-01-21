@@ -68,7 +68,8 @@
                   Edit
                 </a>
 
-                <button class="pokemon-table__action pokemon-table__action--delete" type="button">
+                <button *ngIf="pokemon.id != null" (click)="deletePokemon(pokemon.id)"
+                  class="pokemon-table__action pokemon-table__action--delete" type="button">
                   Delete
                 </button>
               </div>

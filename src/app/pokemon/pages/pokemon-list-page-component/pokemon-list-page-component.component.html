@@ -3,5 +3,6 @@
   <img src="assets/images/loading.gif" alt="loading">
 </div>
 <div class="card" *ngIf="!loading">
-  <app-pokemon-table [pokemons]="pokemons"></app-pokemon-table>
+  <app-pokemon-table [pokemons]="pokemons"
+   (deleted)="onPokemonDeleted($event)"></app-pokemon-table>
 </div>
