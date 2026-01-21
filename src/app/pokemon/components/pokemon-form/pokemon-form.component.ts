@@ -8,6 +8,8 @@ import {
 
 import { CommonModule } from '@angular/common';
 import { Pokemon } from '@models/pokemon.model';
+import { PokemonService } from '@services/pokemon.service';
+import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -20,7 +22,11 @@ export class PokemonFormComponent {
   @Input() pokemon?: Pokemon;
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private ps: PokemonService,
+    private router: Router
+  ) {
     this.createForm();
   }
 
@@ -45,8 +51,12 @@ export class PokemonFormComponent {
       this.form.markAllAsTouched();
       return;
     }
-
     const pokemon: Pokemon = this.form.value;
-    console.log('Pokemon:', pokemon);
+    this.ps.createPokemon(pokemon).subscribe(
+      (pokemonNew) => {
+        alert(`Pokemon new ${pokemonNew.id} ${pokemonNew.name}`   )
+        this.router.navigate(['/']);
+      }
+    );
   }
 }

@@ -5,7 +5,7 @@ import { Pokemon } from '@models/pokemon.model';
 import { environment } from '@env/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokemonService {
   private apiUrl = `${environment.apiUrl}/Pokemons`;
@@ -20,7 +20,13 @@ export class PokemonService {
   }
 
   createPokemon(pokemon: Pokemon): Observable<Pokemon> {
-    return this.http.post<Pokemon>(this.apiUrl, pokemon);
+    let data = {
+      name: pokemon.name,
+      type: pokemon.type,
+      level: pokemon.level,
+      hp: pokemon.hp,
+    };
+    return this.http.post<Pokemon>(this.apiUrl, data);
   }
 
   updatePokemon(id: number, pokemon: Pokemon): Observable<Pokemon> {
