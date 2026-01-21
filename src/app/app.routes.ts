@@ -7,7 +7,7 @@ import { SessionNotFoundComponent } from '@pages/session-not-found/session-not-f
 export const routes: Routes = [
   { path: '', component: PokemonListPageComponentComponent },
   { path: 'pokemon/new', component: CreatePokemonComponent },  
-  { path: 'pokemon/edit', component: EditPokemonComponent },
+  { path: 'pokemon/edit/:id', component: EditPokemonComponent },
   { path: 'session-not-found', component: SessionNotFoundComponent },
   { path: '**', redirectTo: 'session-not-found' },
 ];
