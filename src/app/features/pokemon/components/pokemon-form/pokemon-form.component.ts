@@ -7,8 +7,8 @@ import {
 } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
-import { Pokemon } from '@models/pokemon.model';
-import { PokemonService } from '@services/pokemon.service';
+import { Pokemon } from '@domain/pokemon.model';
+import { PokemonService } from '@data-access/pokemon.service';
 import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 

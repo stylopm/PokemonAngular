@@ -20,13 +20,10 @@
     "baseUrl": "src",
     "paths": {
       "@env/*": ["environments/*"],
-      "@models/*": ["app/pokemon/models/*"],
-      "@services/*": ["app/pokemon/services/*"],
-      "@components/*": ["app/pokemon/components/*"],
-      "@pages/*": ["app/pokemon/pages/*"],
-      "@shared/*": ["app/pokemon/shared/*"],
-      "@core/*": ["app/pokemon/core/*"],
-      "@utils/*": ["app/pokemon/utils/*"],
+      "@domain/*": ["app/features/pokemon/domain/*"],
+      "@data-access/*": ["app/features/pokemon/data-access/*"],
+      "@components/*": ["app/features/pokemon/components/*"],
+      "@pages/*": ["app/features/pokemon/pages/*"],
     }
   },
   "angularCompilerOptions": {
