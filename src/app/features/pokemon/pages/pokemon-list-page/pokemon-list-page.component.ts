@@ -6,10 +6,10 @@ import { PokemonTableComponent } from '@components/pokemon-table/pokemon-table.c
 import { finalize } from 'rxjs';
 
 @Component({
-  selector: 'app-pokemon-list-page-component',
+  selector: 'app-pokemon-list-page',
   imports: [CommonModule, PokemonTableComponent],
-  templateUrl: './pokemon-list-page-component.component.html',
-  styleUrl: './pokemon-list-page-component.component.css',
+  templateUrl: './pokemon-list-page.component.html',
+  styleUrl: './pokemon-list-page.component.css',
 })
 export class PokemonListPageComponentComponent {
   pokemons: Pokemon[] = [];

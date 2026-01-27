@@ -6,10 +6,10 @@ import { PokemonFormComponent } from '@components/pokemon-form/pokemon-form.comp
 import { PokemonService } from '@services/pokemon.service';
 
 @Component({
-  selector: 'app-edit-pokemon',
-  imports: [CommonModule, PokemonFormComponent],
-  templateUrl: './edit-pokemon.component.html',
-  styleUrl: './edit-pokemon.component.css',
+  selector: 'app-pokemon-edit',
+  imports: [CommonModule, PokemonForm],
+  templateUrl: './pokemon-edit-page.html',
+  styleUrl: './pokemon-edit-page.css',
 })
 export class EditPokemonComponent {
   pokemonGet: Pokemon | null = null;

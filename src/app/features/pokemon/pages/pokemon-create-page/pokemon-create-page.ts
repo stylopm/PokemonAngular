@@ -4,9 +4,9 @@ import { PokemonFormComponent } from '@components/pokemon-form/pokemon-form.comp
 @Component({
   selector: 'app-create-pokemon',
   imports: [PokemonFormComponent],
-  templateUrl: './create-pokemon.component.html',
-  styleUrl: './create-pokemon.component.css'
+  templateUrl: './pokemon-create-page.html',
+  styleUrl: './pokemon-create-page.css'
 })
-export class CreatePokemonComponent {
+export class PokemonCreateComponent {
 
 }
