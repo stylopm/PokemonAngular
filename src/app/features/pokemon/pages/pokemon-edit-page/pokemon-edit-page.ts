@@ -1,13 +1,13 @@
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Pokemon } from '@models/pokemon.model';
+import { Pokemon } from '@domain/pokemon.model';
 import { PokemonFormComponent } from '@components/pokemon-form/pokemon-form.component';
-import { PokemonService } from '@services/pokemon.service';
+import { PokemonService } from '@data-access/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-edit',
-  imports: [CommonModule, PokemonForm],
+  imports: [CommonModule, PokemonFormComponent],
   templateUrl: './pokemon-edit-page.html',
   styleUrl: './pokemon-edit-page.css',
 })

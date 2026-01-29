@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Pokemon } from '@models/pokemon.model';
-import { PokemonService } from '@services/pokemon.service';
+import { Pokemon } from '@domain/pokemon.model';
+import { PokemonService } from '@data-access/pokemon.service';
 import { PokemonTableComponent } from '@components/pokemon-table/pokemon-table.component';
 import { finalize } from 'rxjs';
 
