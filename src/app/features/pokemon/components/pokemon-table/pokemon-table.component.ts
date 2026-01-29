@@ -14,13 +14,20 @@ import { RouterLink } from '@angular/router';
 export class PokemonTableComponent {
   constructor(private ps: PokemonService) {}
   @Input() pokemons: Pokemon[] = [];
-  @Output() deleted = new EventEmitter<number>();
+  @Output() delete = new EventEmitter<number>();
+  @Output() edit = new EventEmitter<number>();
+  
   deletePokemon(id: number) {
-    this.ps.deletePokemon(id).subscribe({
-      next: () => {
-        this.deleted.emit(id); // 👈 aquí notificas
-      },
-      error: (err) => console.error(err),
-    });
+    // this.ps.deletePokemon(id).subscribe({
+    //   next: () => {
+    //     this.deleted.emit(id); // 👈 aquí notificas
+    //   },
+    //   error: (err) => console.error(err),
+    // });
+        this.delete.emit(id);
+  }
+
+    onEdit(id: number) {
+    this.edit.emit(id);
   }
 }
